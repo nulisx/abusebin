@@ -10,13 +10,12 @@ const nextConfig = {
     unoptimized: true,
   },
   output: 'standalone',
-  webpack(config) {
-    config.optimization.splitChunks = {
-      chunks: 'all',
-      maxSize: 25000000,
-    };
+  webpack(config, { isServer }) {
+    if (isServer) {
+      config.cache = false; // disables server webpack cache to reduce large files
+    }
     return config;
   },
-}
+};
 
-export default nextConfig
+export default nextConfig;
