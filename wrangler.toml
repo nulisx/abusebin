@@ -1,6 +1,15 @@
 name = "abusebin"
-compatibility_date = "2025-10-24"
-main = ".next/standalone/server.js"
+main = ".next/worker/index.js"
+compatibility_date = "2025-10-23"
+type = "javascript"
 
-[site]
-bucket = ".next/static"
+account_id = "7b8ae72982e33767d02052569836e58b"
+workers_dev = true
+
+[build]
+command = "npm run build"
+upload_format = "service-worker"
+
+[build.upload]
+dir = ".next"
+main = "worker/index.js"
