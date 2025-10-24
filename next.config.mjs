@@ -8,7 +8,7 @@ const nextConfig = {
     config.optimization.splitChunks = {
       chunks: 'all',
       minSize: 20000,
-      maxSize: 10000000, // ~10 MB per chunk
+      maxSize: 5000000, // ~5 MB max per chunk
       automaticNameDelimiter: '-',
     };
     return config;
