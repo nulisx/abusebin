@@ -1,0 +1,7 @@
+name = "abusebin"
+compatibility_date = "2025-10-24"
+main = ".next/standalone/server.js"
+
+[site]
+bucket = ".next/static"
+entry-point = "."
