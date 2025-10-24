@@ -55,6 +55,7 @@ export default function ContactPage() {
                     width={96}
                     height={96}
                     className="object-cover"
+                    unoptimized
                   />
                 </div>
                 <div className="text-center mb-4">

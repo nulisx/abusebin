@@ -61,6 +61,7 @@ export default function PurchaseContactPage() {
                   width={120}
                   height={120}
                   className="rounded-full object-cover"
+                  unoptimized
                 />
               </div>
               <div className="flex items-center gap-2">

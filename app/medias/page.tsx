@@ -62,6 +62,7 @@ export default function ContactPage() {
                     width={80}
                     height={80}
                     className="rounded-full object-cover"
+                    unoptimized
                   />
                   <div className="flex items-center gap-2">
                     <UserDisplay username={admin.username} role={admin.role} nameColor={userData?.nameColor} />
