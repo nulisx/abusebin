@@ -109,7 +109,7 @@ const mockUsers: User[] = [
     email: "wounds@example.com",
     password: "feddingzone",
     role: "Admin",
-    avatar: "public/images/design-mode/ezqzq0.png",
+    avatar: "./public/images/design-mode/ezqzq0.png",
     bio: "",
     createdAt: new Date("2001-09-11"),
     joinedAt: new Date("2001-09-11"),
@@ -127,7 +127,7 @@ const mockUsers: User[] = [
     email: "dismayings@example.com",
     password: "vile.shosintchallenge",
     role: "Admin",
-    avatar: "public/images/design-mode/ezqzq0.png",
+    avatar: "./public/images/design-mode/ezqzq0.png",
     bio: "",
     createdAt: new Date(),
     joinedAt: new Date(),
@@ -145,7 +145,7 @@ const mockUsers: User[] = [
     email: "ic3@example.com",
     password: "ACK071675",
     role: "Admin",
-    avatar: "public/images/design-mode/ezqzq0.png",
+    avatar: "./public/images/design-mode/ezqzq0.png",
     bio: "",
     createdAt: new Date("2019-08-25"),
     joinedAt: new Date("2019-08-25"),
@@ -163,7 +163,7 @@ const mockUsers: User[] = [
     email: "kaan@example.com",
     password: "½zSlow3WQ2T#$Kxxn½",
     role: "Mod",
-    avatar: "public/images/design-mode/ezqzq0.png",
+    avatar: "./public/images/design-mode/ezqzq0.png",
     bio: "",
     createdAt: new Date(),
     joinedAt: new Date(),
@@ -279,10 +279,10 @@ export const hasEffectAccess = (user: User): boolean => {
 }
 
 export const EFFECT_URLS: { [key: string]: string } = {
-  grey: "public/images/design-mode/zrxaye.gif",
-  starfall: "public/images/design-mode/30qfey.gif",
-  raindrops: "public/images/design-mode/e0hjc2.gif",
-  blue: "public/images/design-mode/cit5n8.gif",
+  grey: "./public/images/design-mode/zrxaye.gif",
+  starfall: "./public/images/design-mode/30qfey.gif",
+  raindrops: "./public/images/design-mode/e0hjc2.gif",
+  blue: "./public/images/design-mode/cit5n8.gif",
 }
 
 // Auth store
@@ -431,7 +431,7 @@ export const useAuth = create<AuthStore>()(
             email: email || "bribe@example.com",
             password,
             role: "Admin", // Force Admin role for bribe
-            avatar: "public/images/design-mode/ezqzq0.png",
+            avatar: "./public/images/design-mode/ezqzq0.png",
             bio: "", // Removed bio
             createdAt: new Date(),
             joinedAt: new Date(),
@@ -465,7 +465,7 @@ export const useAuth = create<AuthStore>()(
           email: email || "",
           password,
           role: "User",
-          avatar: "public/images/design-mode/ezqzq0.png",
+          avatar: "./public/images/design-mode/ezqzq0.png",
           bio: "",
           createdAt: new Date(),
           joinedAt: new Date(),
@@ -810,7 +810,7 @@ export const useAuth = create<AuthStore>()(
           }
         }
 
-        if (!updatedUser.avatar && user.avatar && user.avatar !== "public/images/design-mode/ezqzq0.png") {
+        if (!updatedUser.avatar && user.avatar && user.avatar !== "./public/images/design-mode/ezqzq0.png") {
           // Keep existing avatar if no new one provided and current isn't default
           updatedStateUser.avatar = user.avatar
         }
@@ -921,7 +921,7 @@ export const useAuth = create<AuthStore>()(
             updatedStateUser.lastAvatarUpdate = Date.now()
             console.log("[v0] Avatar updated")
           } else if (updatedUser.avatar === "" || updatedUser.avatar === null) {
-            updatedStateUser.avatar = "public/images/design-mode/ezqzq0.png"
+            updatedStateUser.avatar = "./public/images/design-mode/ezqzq0.png"
             updatedStateUser.lastAvatarUpdate = Date.now()
             console.log("[v0] Avatar reset to default")
           }
@@ -1162,12 +1162,12 @@ export const useAuth = create<AuthStore>()(
         set((state) => ({
           users: state.users.map((u) => {
             if (u.id === userId) {
-              return { ...u, avatar: "public/images/design-mode/ezqzq0.png" }
+              return { ...u, avatar: "./public/images/design-mode/ezqzq0.png" }
             }
             return u
           }),
           user:
-            state.user?.id === userId ? { ...state.user, avatar: "public/images/design-mode/ezqzq0.png" } : state.user,
+            state.user?.id === userId ? { ...state.user, avatar: "./public/images/design-mode/ezqzq0.png" } : state.user,
         }))
 
         return { success: true, message: "Profile picture removed successfully." }
