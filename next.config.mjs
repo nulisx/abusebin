@@ -3,7 +3,7 @@ const nextConfig = {
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
   images: { unoptimized: true },
-  output: 'standalone',
+  output: 'export',
   webpack(config) {
     config.optimization.splitChunks = {
       chunks: 'all',
