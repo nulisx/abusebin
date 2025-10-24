@@ -1,6 +1,7 @@
 import { writeFileSync } from "fs"
+import { execSync } from "child_process"
 
-const projectName = "abusebin"
+const projectName = execSync("basename $(git rev-parse --show-toplevel)").toString().trim()
 
 const wranglerConfig = `
 name = "${projectName}"
