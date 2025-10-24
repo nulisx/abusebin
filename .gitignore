@@ -26,3 +26,10 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 .next
+
+# replit
+.config/
+.upm/
+.cache/
+replit.nix
+.replit
