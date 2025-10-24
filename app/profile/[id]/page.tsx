@@ -52,7 +52,7 @@ export default function ProfilePage() {
     return (
       <Layout>
         <div className="flex flex-col items-center justify-center min-h-[80vh]">
-          <Image src="/images/loading-logo.gif" alt="Loading" width={200} height={200} className="object-contain mb-4"/>
+          <Image src="/images/loading-logo.gif" alt="Loading" width={200} height={200} className="object-contain mb-4" unoptimized />
           <div className="text-white text-xl">Loading....</div>
         </div>
       </Layout>
