@@ -11,7 +11,7 @@ export function Navigation() {
   return (
     <nav className="flex items-center justify-between p-4 border-b border-gray-800">
       <Link href="/" className="flex items-center space-x-2 hover:opacity-80">
-        <Image src="/images/abusebin-logo.png" alt="Abusebin" width={32} height={32} className="object-contain" />
+        <Image src="/images/abusebin-logo.png" alt="Abusebin" width={32} height={32} className="object-contain" style={{ width: 'auto', height: 32 }} />
         <div className="text-white text-xl font-bold">abuse.bin</div>
       </Link>
       <div className="flex items-center space-x-6">

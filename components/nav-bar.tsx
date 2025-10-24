@@ -34,7 +34,7 @@ export function NavBar() {
   return (
     <nav className="flex items-center justify-between p-4 border-b border-black">
       <Link href="/" className="flex items-center space-x-2 hover:opacity-80">
-        <Image src="/images/abusebin-logo.png" alt="abuse.bin logo" width={32} height={32} className="object-contain" />
+        <Image src="/images/abusebin-logo.png" alt="abuse.bin logo" width={32} height={32} className="object-contain" style={{ width: 'auto', height: 32 }} />
         <div className="text-white text-xl font-bold">abuse.bin</div>
       </Link>
       <div className="flex items-center space-x-6">
@@ -70,7 +70,7 @@ export function NavBar() {
                     alt="Avatar"
                     size={32}
                     userId={user.id}
-                    fallbackSrc="/images/design-mode/ezqzq0.png"
+                    fallbackSrc="/images/design-mode/a9q5s0.png"
                   />
                 </div>
                 <div className="relative">
