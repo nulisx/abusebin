@@ -12,13 +12,13 @@ export function RoleBadge({ role, user, className }: RoleBadgeProps) {
   const getSparkleEffect = (role: string) => {
     switch (role) {
       case "Admin":
-        return "https://files.catbox.moe/vqvalf.gif"
+        return "public/images/design-mode/vqvalf.gif"
       case "Manager":
-        return "https://files.catbox.moe/p9n473.gif"
+        return "public/images/design-mode/p9n473.gif"
       case "Rich":
-        return "https://files.catbox.moe/2qqmwy.gif"
+        return "public/images/design-mode/2qqmwy.gif"
       case "Kitty":
-        return "https://files.catbox.moe/kzzl7i.gif"
+        return "public/images/design-mode/kzzl7i.gif"
       default:
         return null
     }
