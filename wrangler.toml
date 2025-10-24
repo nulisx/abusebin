@@ -4,4 +4,3 @@ main = ".next/standalone/server.js"
 
 [site]
 bucket = ".next/static"
-entry-point = "."
