@@ -43,11 +43,12 @@ export function Navigation() {
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden">
                   <Image
-                    src={user.avatar || "https://files.catbox.moe/ezqzq0.png"}
+                    src={user.avatar || "/images/design-mode/a9q5s0.png"}
                     alt="Avatar"
                     width={32}
                     height={32}
                     className="object-cover"
+                    unoptimized
                   />
                 </div>
                 <span className={ROLE_COLORS[user.role as keyof typeof ROLE_COLORS] || "text-white"}>
