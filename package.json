@@ -4,12 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 5000 -H 0.0.0.0",
-    "build": "npx @cloudflare/next-on-pages",
+    "build": "npx --yes @opennextjs/cloudflare@latest build",
     "start": "next start -p 5000 -H 0.0.0.0",
-    "lint": "next lint",
-    "pages:build": "npx @cloudflare/next-on-pages",
-    "preview": "npm run pages:build && wrangler pages dev",
-    "deploy": "npm run pages:build && wrangler pages deploy"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",

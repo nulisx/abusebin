@@ -1,3 +1,8 @@
 name = "abusebin"
+main = ".open-next/worker.js"
 compatibility_date = "2025-10-23"
-pages_build_output_dir = ".vercel/output/static"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+directory = ".open-next/assets"
+binding = "ASSETS"
