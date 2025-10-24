@@ -12,13 +12,19 @@ export default function ContactPage() {
     {
       username: "wounds",
       role: "Admin",
-      avatar: "https://files.catbox.moe/5bfnaj.jpg", // Updated to use new wounds avatar
+      avatar: "ezqzq0.jpg", // Updated to use new wounds avatar
+      telegramLink: "https://t.me/junkjaw",
+    },
+{
+      username: "wounds",
+      role: "Admin",
+      avatar: "ezqzq0.jpg", // Updated to use new wounds avatar
       telegramLink: "https://t.me/junkjaw",
     },
     {
       username: "dismayings",
       role: "Admin",
-      avatar: "https://files.catbox.moe/ezqzq0.png", // Default avatar for dismayings
+      avatar: "ezqzq0.png", // Default avatar for dismayings
       telegramLink: "https://t.me/unedrable", // Updated telegram link
     },
   ]
