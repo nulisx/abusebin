@@ -1,3 +1,6 @@
+export const dynamic = "force-static"
+export const revalidate = false
+
 import type { NextRequest } from "next/server"
 
 const clients = new Set<WebSocket>()
