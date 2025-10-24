@@ -13,13 +13,13 @@ export function NavBar() {
   const getSparkleEffect = (role: string) => {
     switch (role) {
       case "Admin":
-        return "https://files.catbox.moe/vqvalf.gif"
+        return "public/images/design-mode/vqvalf.gif"
       case "Manager":
-        return "https://files.catbox.moe/p9n473.gif"
+        return "public/images/design-mode/p9n473.gif"
       case "Rich":
-        return "https://files.catbox.moe/2qqmwy.gif"
+        return "public/images/design-mode/2qqmwy.gif"
       case "Kitty":
-        return "https://files.catbox.moe/kzzl7i.gif"
+        return "public/images/design-mode/kzzl7i.gif"
       default:
         return null
     }
@@ -66,7 +66,7 @@ export function NavBar() {
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden flex-shrink-0">
                   <UserAvatar
-                    src={user.avatar || "https://files.catbox.moe/ezqzq0.png"}
+                    src={user.avatar || "public/images/design-mode/ezqzq0.png"}
                     alt="Avatar"
                     size={32}
                     userId={user.id}
