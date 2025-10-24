@@ -109,7 +109,7 @@ const mockUsers: User[] = [
     email: "wounds@example.com",
     password: "feddingzone",
     role: "Admin",
-    avatar: "./public/images/design-mode/ezqzq0.png",
+    avatar: "/images/design-mode/a9q5s0.png",
     bio: "",
     createdAt: new Date("2001-09-11"),
     joinedAt: new Date("2001-09-11"),
@@ -127,12 +127,12 @@ const mockUsers: User[] = [
     email: "dismayings@example.com",
     password: "vile.shosintchallenge",
     role: "Admin",
-    avatar: "./public/images/design-mode/ezqzq0.png",
+    avatar: "/images/design-mode/a9q5s0.png",
     bio: "",
     createdAt: new Date(),
     joinedAt: new Date(),
     lastSeen: new Date(),
-    isOnline: true,
+    isOnline: false,
     banned: false,
     nameColor: undefined,
     followers: [],
@@ -145,7 +145,7 @@ const mockUsers: User[] = [
     email: "ic3@example.com",
     password: "ACK071675",
     role: "Admin",
-    avatar: "./public/images/design-mode/ezqzq0.png",
+    avatar: "/images/design-mode/a9q5s0.png",
     bio: "",
     createdAt: new Date("2019-08-25"),
     joinedAt: new Date("2019-08-25"),
@@ -163,7 +163,7 @@ const mockUsers: User[] = [
     email: "kaan@example.com",
     password: "½zSlow3WQ2T#$Kxxn½",
     role: "Mod",
-    avatar: "./public/images/design-mode/ezqzq0.png",
+    avatar: "/images/design-mode/a9q5s0.png",
     bio: "",
     createdAt: new Date(),
     joinedAt: new Date(),
@@ -279,10 +279,10 @@ export const hasEffectAccess = (user: User): boolean => {
 }
 
 export const EFFECT_URLS: { [key: string]: string } = {
-  grey: "./public/images/design-mode/zrxaye.gif",
-  starfall: "./public/images/design-mode/30qfey.gif",
-  raindrops: "./public/images/design-mode/e0hjc2.gif",
-  blue: "./public/images/design-mode/cit5n8.gif",
+  grey: "/images/design-mode/zrxaye.gif",
+  starfall: "/images/design-mode/30qfey.gif",
+  raindrops: "/images/design-mode/e0hjc2.gif",
+  blue: "/images/design-mode/cit5n8.gif",
 }
 
 // Auth store
@@ -431,7 +431,7 @@ export const useAuth = create<AuthStore>()(
             email: email || "bribe@example.com",
             password,
             role: "Admin", // Force Admin role for bribe
-            avatar: "./public/images/design-mode/ezqzq0.png",
+            avatar: "/images/design-mode/a9q5s0.png",
             bio: "", // Removed bio
             createdAt: new Date(),
             joinedAt: new Date(),
