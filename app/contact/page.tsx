@@ -10,10 +10,10 @@ export default function ContactPage() {
   // Mock admin data for display - replaced ic3 with bribe
   const admins = [
     {
-      username: "wounds",
+      username: "ic3/revoke",
       role: "Admin",
-      avatar: "ezqzq0.jpg", // Updated to use new wounds avatar
-      telegramLink: "https://t.me/junkjaw",
+      avatar: "ezqzq0.jpg", // Updated to use new revokes avatar
+      telegramLink: "https://t.me/ragebaitr",
     },
 {
       username: "wounds",
