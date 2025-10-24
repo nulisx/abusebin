@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "rm -rf .next/cache && next build",
+    "build": "next build",
+    "deploy": "npx wrangler deploy",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
