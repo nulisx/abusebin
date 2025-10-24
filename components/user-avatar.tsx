@@ -194,7 +194,7 @@ export function UserAvatar({
           transition: "opacity 0.2s ease-in-out",
         }}
         priority={size > 64} // Prioritize larger avatars
-        loading={shouldUnoptimize ? "eager" : "lazy"}
+        {...(size <= 64 && { loading: shouldUnoptimize ? "eager" : "lazy" })} // Only set loading when not priority
       />
       {effectUrl && (
         <div

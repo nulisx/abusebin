@@ -70,12 +70,12 @@ export function NavBar() {
                     alt="Avatar"
                     size={32}
                     userId={user.id}
-                    fallbacksrc="/images/design-mode/ezqzq0.png"
+                    fallbackSrc="/images/design-mode/ezqzq0.png"
                   />
                 </div>
                 <div className="relative">
                   <span
-                    className="font-medium"
+                    className={user.role === "Council" ? "rainbow-text font-medium" : "font-medium"}
                     style={{
                       color:
                         user.role === "User" && user.nameColor
@@ -102,7 +102,6 @@ export function NavBar() {
                                 })()
                               : "#d1d5db",
                     }}
-                    className={user.role === "Council" ? "rainbow-text" : ""}
                   >
                     {user.username}
                   </span>
@@ -121,7 +120,7 @@ export function NavBar() {
                 </div>
                 <div className="relative flex items-center">
                   <span
-                    className="text-base"
+                    className={user.role === "Council" ? "rainbow-text text-base" : "text-base"}
                     style={{
                       color:
                         user.role === "Council"
@@ -146,7 +145,6 @@ export function NavBar() {
                               })()
                             : "#d1d5db",
                     }}
-                    className={user.role === "Council" ? "rainbow-text" : ""}
                   >
                     [{user.role}]
                   </span>
