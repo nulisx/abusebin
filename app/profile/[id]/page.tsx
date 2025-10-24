@@ -4,17 +4,15 @@ import { useEffect, useState } from "react"
 import { useParams, useRouter } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
-import dynamic from "next/dynamic"
 import { toast } from "sonner"
-
-const Layout = dynamic(() => import("@/components/layout"))
-const Button = dynamic(() => import("@/components/ui/button"))
-const Input = dynamic(() => import("@/components/ui/input"))
-const Textarea = dynamic(() => import("@/components/ui/textarea"))
-const UserAvatar = dynamic(() => import("@/components/user-avatar"))
-const UserDisplay = dynamic(() => import("@/components/user-display"))
-const RoleBadge = dynamic(() => import("@/components/role-badge"))
-const FollowersModal = dynamic(() => import("@/components/followers-modal"))
+import Layout from "@/components/layout"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { UserAvatar } from "@/components/user-avatar"
+import { UserDisplay } from "@/components/user-display"
+import { RoleBadge } from "@/components/role-badge"
+import { FollowersModal } from "@/components/followers-modal"
 import { Ban, CheckCircle, Trash2, Users, UserPlus, UserMinus, ImageOff, ChevronLeft, ChevronRight } from "lucide-react"
 import { useAuth } from "@/lib/auth"
 
