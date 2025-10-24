@@ -1,0 +1,52 @@
+2025-10-24T05:53:11.385Z	Initializing build environment...
+2025-10-24T05:53:19.254Z	Success: Finished initializing build environment
+2025-10-24T05:53:20.019Z	Cloning repository...
+2025-10-24T05:53:20.838Z	Restoring from dependencies cache
+2025-10-24T05:53:20.840Z	Restoring from build output cache
+2025-10-24T05:53:20.844Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-10-24T05:53:21.190Z	Installing project dependencies: npm clean-install --progress=false
+2025-10-24T05:53:46.953Z	
+2025-10-24T05:53:46.954Z	added 249 packages, and audited 250 packages in 25s
+2025-10-24T05:53:46.955Z	
+2025-10-24T05:53:46.955Z	36 packages are looking for funding
+2025-10-24T05:53:46.955Z	  run `npm fund` for details
+2025-10-24T05:53:46.955Z	
+2025-10-24T05:53:46.955Z	found 0 vulnerabilities
+2025-10-24T05:53:47.024Z	Executing user build command: npm run build
+2025-10-24T05:53:47.213Z	
+2025-10-24T05:53:47.214Z	> abusebin@0.1.0 build
+2025-10-24T05:53:47.214Z	> npx --yes @opennextjs/cloudflare@latest build
+2025-10-24T05:53:47.214Z	
+2025-10-24T05:53:11.385Z	Initializing build environment...
+2025-10-24T05:53:19.254Z	Success: Finished initializing build environment
+2025-10-24T05:53:20.019Z	Cloning repository...
+2025-10-24T05:53:20.838Z	Restoring from dependencies cache
+2025-10-24T05:53:20.840Z	Restoring from build output cache
+2025-10-24T05:53:20.844Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-10-24T05:53:21.190Z	Installing project dependencies: npm clean-install --progress=false
+2025-10-24T05:53:46.953Z	
+2025-10-24T05:53:46.954Z	added 249 packages, and audited 250 packages in 25s
+2025-10-24T05:53:46.955Z	
+2025-10-24T05:53:46.955Z	36 packages are looking for funding
+2025-10-24T05:53:46.955Z	  run `npm fund` for details
+2025-10-24T05:53:46.955Z	
+2025-10-24T05:53:46.955Z	found 0 vulnerabilities
+2025-10-24T05:53:47.024Z	Executing user build command: npm run build
+2025-10-24T05:53:47.213Z	
+2025-10-24T05:53:47.214Z	> abusebin@0.1.0 build
+2025-10-24T05:53:47.214Z	> npx --yes @opennextjs/cloudflare@latest build
+2025-10-24T05:53:47.214Z	
+2025-10-24T05:54:30.500Z	npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2025-10-24T05:54:40.448Z	
+2025-10-24T05:54:40.448Z	┌─────────────────────────────┐
+2025-10-24T05:54:40.448Z	│ OpenNext — Cloudflare build │
+2025-10-24T05:54:40.448Z	└─────────────────────────────┘
+2025-10-24T05:54:40.448Z	
+2025-10-24T05:54:40.477Z	Warning: Detected unsettled top-level await at file:///opt/buildhome/.npm/_npx/b8f71965aba33be8/node_modules/@opennextjs/cloudflare/dist/cli/index.js:19
+2025-10-24T05:54:40.477Z	await runCommand();
+2025-10-24T05:54:40.477Z	^
+2025-10-24T05:54:40.477Z	
+2025-10-24T05:54:40.477Z	
+2025-10-24T05:54:40.477Z	
+2025-10-24T05:54:40.547Z	? Missing required `open-next.config.ts` file, do you want to create one? (Y/n) ‣ true
+2025-10-24T05:54:40.551Z	Failed: error occurred while running build command
