@@ -1,8 +1,3 @@
 name = "abusebin"
-type = "javascript"
-account_id = "7b8ae72982e33767d02052569836e58b"
 compatibility_date = "2025-10-23"
-
-[build]
-command = "npm run build"
-upload = { format = "service-worker" }
+pages_build_output_dir = ".vercel/output/static"
