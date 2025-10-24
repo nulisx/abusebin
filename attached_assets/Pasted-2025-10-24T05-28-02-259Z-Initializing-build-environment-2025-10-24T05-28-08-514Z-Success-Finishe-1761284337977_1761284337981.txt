@@ -1,0 +1,114 @@
+2025-10-24T05:28:02.259Z	Initializing build environment...
+2025-10-24T05:28:08.514Z	Success: Finished initializing build environment
+2025-10-24T05:28:09.282Z	Cloning repository...
+2025-10-24T05:28:10.194Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-10-24T05:28:10.196Z	Restoring from dependencies cache
+2025-10-24T05:28:10.198Z	Restoring from build output cache
+2025-10-24T05:28:10.525Z	Installing project dependencies: npm clean-install --progress=false
+2025-10-24T05:28:20.294Z	
+2025-10-24T05:28:20.294Z	added 198 packages, and audited 199 packages in 9s
+2025-10-24T05:28:20.294Z	
+2025-10-24T05:28:20.294Z	26 packages are looking for funding
+2025-10-24T05:28:20.295Z	  run `npm fund` for details
+2025-10-24T05:28:20.295Z	
+2025-10-24T05:28:20.295Z	found 0 vulnerabilities
+2025-10-24T05:28:20.357Z	Executing user build command: npm run build
+2025-10-24T05:28:20.541Z	
+2025-10-24T05:28:20.541Z	> abusebin@0.1.0 build
+2025-10-24T05:28:20.541Z	> next build
+2025-10-24T05:28:20.541Z	
+2025-10-24T05:28:21.006Z	⚠ No build cache found. Please configure build caching for faster rebuilds. Read more: https://nextjs.org/docs/messages/no-cache
+2025-10-24T05:28:21.010Z	Attention: Next.js now collects completely anonymous telemetry regarding usage.
+2025-10-24T05:28:21.010Z	This information is used to shape Next.js' roadmap and prioritize features.
+2025-10-24T05:28:21.010Z	You can learn more, including how to opt-out if you'd not like to participate in this anonymous program, by visiting the following URL:
+2025-10-24T05:28:21.010Z	https://nextjs.org/telemetry
+2025-10-24T05:28:21.010Z	
+2025-10-24T05:28:21.052Z	   ▲ Next.js 15.5.4
+2025-10-24T05:28:21.052Z	
+2025-10-24T05:28:21.121Z	   Creating an optimized production build ...
+2025-10-24T05:28:35.745Z	 ✓ Compiled successfully in 14.4s
+2025-10-24T05:28:35.749Z	   Skipping validation of types
+2025-10-24T05:28:35.750Z	   Skipping linting
+2025-10-24T05:28:36.038Z	   Collecting page data ...
+2025-10-24T05:28:37.527Z	   Generating static pages (0/23) ...
+2025-10-24T05:28:38.355Z	   Generating static pages (5/23) 
+2025-10-24T05:28:38.356Z	   Generating static pages (11/23) 
+2025-10-24T05:28:38.426Z	   Generating static pages (17/23) 
+2025-10-24T05:28:38.427Z	 ✓ Generating static pages (23/23)
+2025-10-24T05:28:38.983Z	   Finalizing page optimization ...
+2025-10-24T05:28:38.988Z	   Collecting build traces ...
+2025-10-24T05:28:52.557Z	
+2025-10-24T05:28:52.557Z	Route (app)                             Size  First Load JS
+2025-10-24T05:28:52.557Z	┌ ○ /                                4.27 kB         159 kB
+2025-10-24T05:28:52.557Z	├ ○ /_not-found                        995 B         103 kB
+2025-10-24T05:28:52.558Z	├ ○ /add-paste                       4.23 kB         167 kB
+2025-10-24T05:28:52.558Z	├ ○ /admin/banned                    2.92 kB         167 kB
+2025-10-24T05:28:52.558Z	├ ○ /admin/effect-perms              3.02 kB         167 kB
+2025-10-24T05:28:52.558Z	├ ○ /admin/roles                     11.1 kB         175 kB
+2025-10-24T05:28:52.558Z	├ ○ /admin/user-management            5.6 kB         168 kB
+2025-10-24T05:28:52.558Z	├ ƒ /api/ws                            139 B         102 kB
+2025-10-24T05:28:52.558Z	├ ○ /contact                         6.09 kB         159 kB
+2025-10-24T05:28:52.558Z	├ ○ /hall-of-retards                 4.35 kB         167 kB
+2025-10-24T05:28:52.558Z	├ ○ /hall-of-retards/create          1.44 kB         122 kB
+2025-10-24T05:28:52.558Z	├ ○ /login                            4.8 kB         167 kB
+2025-10-24T05:28:52.558Z	├ ○ /medias                          2.77 kB         158 kB
+2025-10-24T05:28:52.558Z	├ ƒ /paste/[id]                      6.47 kB         171 kB
+2025-10-24T05:28:52.558Z	├ ƒ /profile/[id]                    7.21 kB         171 kB
+2025-10-24T05:28:52.559Z	├ ○ /profile/customize               9.13 kB         173 kB
+2025-10-24T05:28:52.559Z	├ ○ /purchase/contact                3.74 kB         157 kB
+2025-10-24T05:28:52.559Z	├ ○ /realtime-messages                3.9 kB         166 kB
+2025-10-24T05:28:52.559Z	├ ○ /register                        4.69 kB         158 kB
+2025-10-24T05:28:52.559Z	├ ○ /settings/delete-account         1.41 kB         122 kB
+2025-10-24T05:28:52.559Z	├ ○ /tos                             1.42 kB         155 kB
+2025-10-24T05:28:52.559Z	├ ○ /upgrades                        5.54 kB         168 kB
+2025-10-24T05:28:52.559Z	└ ○ /users                           40.7 kB         195 kB
+2025-10-24T05:28:52.559Z	+ First Load JS shared by all         102 kB
+2025-10-24T05:28:52.559Z	  ├ chunks/4623-00e4a53be74d3332.js  99.6 kB
+2025-10-24T05:28:52.559Z	  └ other shared chunks (total)      2.12 kB
+2025-10-24T05:28:52.559Z	
+2025-10-24T05:28:52.559Z	
+2025-10-24T05:28:52.559Z	○  (Static)   prerendered as static content
+2025-10-24T05:28:52.559Z	ƒ  (Dynamic)  server-rendered on demand
+2025-10-24T05:28:52.559Z	
+2025-10-24T05:28:52.686Z	Success: Build command completed
+2025-10-24T05:28:52.687Z	Executing user deploy command: npx wrangler deploy
+2025-10-24T05:29:14.173Z	npm warn exec The following package was not found and will be installed: wrangler@4.45.0
+2025-10-24T05:29:28.882Z	
+2025-10-24T05:29:28.883Z	 ⛅️ wrangler 4.45.0
+2025-10-24T05:29:28.883Z	───────────────────
+2025-10-24T05:29:28.927Z	▲ [WARNING] Processing wrangler.toml configuration:
+2025-10-24T05:29:28.927Z	
+2025-10-24T05:29:28.927Z	    - Unexpected fields found in build field: "upload"
+2025-10-24T05:29:28.927Z	    - Unexpected fields found in top-level field: "type"
+2025-10-24T05:29:28.927Z	
+2025-10-24T05:29:28.927Z	
+2025-10-24T05:29:28.936Z	
+2025-10-24T05:29:28.937Z	✘ [ERROR] Missing entry-point to Worker script or to assets directory
+2025-10-24T05:29:28.938Z	
+2025-10-24T05:29:28.938Z	  
+2025-10-24T05:29:28.938Z	  If there is code to deploy, you can either:
+2025-10-24T05:29:28.938Z	  - Specify an entry-point to your Worker script via the command line (ex: `npx wrangler deploy src/index.ts`)
+2025-10-24T05:29:28.938Z	  - Or add the following to your "wrangler.toml" file:
+2025-10-24T05:29:28.938Z	  
+2025-10-24T05:29:28.938Z	  ```
+2025-10-24T05:29:28.938Z	  main = "src/index.ts"
+2025-10-24T05:29:28.938Z	  
+2025-10-24T05:29:28.938Z	  ```
+2025-10-24T05:29:28.938Z	  
+2025-10-24T05:29:28.938Z	  
+2025-10-24T05:29:28.939Z	  If are uploading a directory of assets, you can either:
+2025-10-24T05:29:28.939Z	  - Specify the path to the directory of assets via the command line: (ex: `npx wrangler deploy --assets=./dist`)
+2025-10-24T05:29:28.939Z	  - Or add the following to your "wrangler.toml" file:
+2025-10-24T05:29:28.939Z	  
+2025-10-24T05:29:28.939Z	  ```
+2025-10-24T05:29:28.940Z	  [assets]
+2025-10-24T05:29:28.940Z	  directory = "./dist"
+2025-10-24T05:29:28.940Z	  
+2025-10-24T05:29:28.940Z	  ```
+2025-10-24T05:29:28.941Z	  
+2025-10-24T05:29:28.941Z	
+2025-10-24T05:29:28.941Z	
+2025-10-24T05:29:28.950Z	
+2025-10-24T05:29:28.950Z	Cloudflare collects anonymous telemetry about your usage of Wrangler. Learn more at https://github.com/cloudflare/workers-sdk/tree/main/packages/wrangler/telemetry.md
+2025-10-24T05:29:28.966Z	🪵  Logs were written to "/opt/buildhome/.config/.wrangler/logs/wrangler-2025-10-24_05-29-27_894.log"
+2025-10-24T05:29:29.055Z	Failed: error occurred while running deploy command
