@@ -358,6 +358,7 @@ export default function PastePage() {
               width={120}
               height={120}
               className="object-contain"
+              style={{ width: 'auto', height: 120 }}
             />
           </div>
 

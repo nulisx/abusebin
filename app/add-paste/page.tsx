@@ -144,6 +144,7 @@ export default function NewPaste() {
               width={80}
               height={80}
               className="object-contain"
+              style={{ width: 'auto', height: 80 }}
             />
           </div>
 
