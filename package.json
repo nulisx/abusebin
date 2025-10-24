@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "wrangler deploy"
+    "deploy": "node scripts/generate-wrangler.js && wrangler deploy"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
