@@ -7,7 +7,8 @@ const nextConfig = {
   webpack(config) {
     config.optimization.splitChunks = {
       chunks: 'all',
-      maxSize: 25000000,
+      minSize: 10000,
+      maxSize: 5000000,
     }
     return config
   },
