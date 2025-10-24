@@ -1,19 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  images: {
-    unoptimized: true,
-  },
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
+  images: { unoptimized: true },
   output: 'standalone',
-  webpack(config, { isServer }) {
-    if (isServer) {
-      config.cache = false; // disables server webpack cache to reduce large files
-    }
+  webpack(config) {
+    config.optimization.splitChunks = {
+      chunks: 'all',
+      minSize: 20000,
+      maxSize: 10000000, // ~10 MB per chunk
+      automaticNameDelimiter: '-',
+    };
     return config;
   },
 };
