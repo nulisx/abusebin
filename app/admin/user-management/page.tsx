@@ -69,7 +69,7 @@ export default function UserManagementPage() {
       setEditForm({
         username: foundUser.username,
         bio: foundUser.bio || "",
-        avatar: foundUser.avatar || "./public/images/design-mode/ezqzq0.png",
+        avatar: foundUser.avatar || "/images/design-mode/a9q5s0.png",
         nameColor: foundUser.nameColor || "rgb(156, 163, 175)",
       })
       toast.success(`Found user: ${foundUser.username}`)

@@ -64,7 +64,7 @@ export function FollowersModal({ isOpen, onClose, userId, type }: FollowersModal
                 >
                   {/* Fixed avatar display to use UserAvatar component for consistency */}
                   <UserAvatar
-                    src={followUser.avatar || "./public/images/design-mode/ezqzq0.png"}
+                    src={followUser.avatar || "/images/design-mode/a9q5s0.png"}
                     alt={`${followUser.username}'s avatar`}
                     width={32}
                     height={32}

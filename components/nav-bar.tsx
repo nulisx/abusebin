@@ -66,7 +66,7 @@ export function NavBar() {
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden flex-shrink-0">
                   <UserAvatar
-                    src={user.avatar || "./public/images/design-mode/ezqzq0.png"}
+                    src={user.avatar || "/images/design-mode/a9q5s0.png"}
                     alt="Avatar"
                     size={32}
                     userId={user.id}

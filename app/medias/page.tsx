@@ -57,7 +57,7 @@ export default function ContactPage() {
               return (
                 <div key={admin.username} className="bg-zinc-900/50 rounded-lg p-6 flex flex-col items-center gap-4">
                   <Image
-                    src={userData?.avatar || "./public/images/design-mode/ezqzq0.png"}
+                    src={userData?.avatar || "/images/design-mode/a9q5s0.png"}
                     alt={`${admin.username}'s avatar`}
                     width={80}
                     height={80}

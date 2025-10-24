@@ -29,13 +29,13 @@ export default function PurchaseContactPage() {
         {
           username: "wounds",
           role: "Admin",
-          avatar: "./public/images/design-mode/ezqzq0.png",
+          avatar: "/images/design-mode/a9q5s0.png",
           telegramLink: "https://t.me/junkjaw",
         },
         {
           username: "dismayings",
           role: "Admin",
-          avatar: "./public/images/design-mode/ezqzq0.png", // Default avatar for dismayings
+          avatar: "/images/design-mode/a9q5s0.png", // Default avatar for dismayings
           telegramLink: "https://t.me/unedrable",
         },
       ])
@@ -56,7 +56,7 @@ export default function PurchaseContactPage() {
             >
               <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden">
                 <Image
-                  src={admin.avatar || "./public/images/design-mode/ezqzq0.png"} // Updated to use new default avatar
+                  src={admin.avatar || "/images/design-mode/a9q5s0.png"}
                   alt={`${admin.username}'s avatar`}
                   width={120}
                   height={120}

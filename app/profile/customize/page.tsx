@@ -105,7 +105,7 @@ export default function SettingsPage() {
       console.log("[v0] User loaded:", user.username)
       setSettings({
         bio: user.bio || "",
-        avatar: user.avatar || "./public/images/design-mode/ezqzq0.png",
+        avatar: user.avatar || "/images/design-mode/a9q5s0.png",
         nameColor: user.nameColor || nameColors[0].color,
         username: user.username || "",
         activeEffect: user.activeEffect || null,
