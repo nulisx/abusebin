@@ -139,7 +139,7 @@ export function UserAvatar({
         setIsLoading(false)
       }
     }
-  }, [users, userId, src, currentUser, fallbackSrc, avatarSrc, isGifUrl])
+  }, [users, userId, src, currentUser, fallbackSrc, isGifUrl])
 
   const handleImageError = useCallback(
     (e: React.SyntheticEvent<HTMLImageElement>) => {
