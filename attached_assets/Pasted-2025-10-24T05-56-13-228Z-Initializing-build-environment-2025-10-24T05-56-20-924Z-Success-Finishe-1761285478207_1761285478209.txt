@@ -1,0 +1,98 @@
+2025-10-24T05:56:13.228Z	Initializing build environment...
+2025-10-24T05:56:20.924Z	Success: Finished initializing build environment
+2025-10-24T05:56:21.710Z	Cloning repository...
+2025-10-24T05:56:23.236Z	Restoring from dependencies cache
+2025-10-24T05:56:23.238Z	Restoring from build output cache
+2025-10-24T05:56:23.242Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-10-24T05:56:23.584Z	Installing project dependencies: npm clean-install --progress=false
+2025-10-24T05:56:57.523Z	
+2025-10-24T05:56:57.523Z	added 249 packages, and audited 250 packages in 34s
+2025-10-24T05:56:57.523Z	
+2025-10-24T05:56:57.524Z	36 packages are looking for funding
+2025-10-24T05:56:57.524Z	  run `npm fund` for details
+2025-10-24T05:56:57.524Z	
+2025-10-24T05:56:57.524Z	found 0 vulnerabilities
+2025-10-24T05:56:57.596Z	Executing user build command: npm run build
+2025-10-24T05:56:57.783Z	
+2025-10-24T05:56:57.783Z	> abusebin@0.1.0 build
+2025-10-24T05:56:57.783Z	> npx --yes @opennextjs/cloudflare@latest build
+2025-10-24T05:56:57.783Z	
+2025-10-24T05:57:28.216Z	npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2025-10-24T05:56:13.228Z	Initializing build environment...
+2025-10-24T05:56:20.924Z	Success: Finished initializing build environment
+2025-10-24T05:56:21.710Z	Cloning repository...
+2025-10-24T05:56:23.236Z	Restoring from dependencies cache
+2025-10-24T05:56:23.238Z	Restoring from build output cache
+2025-10-24T05:56:23.242Z	Detected the following tools from environment: npm@10.9.2, nodejs@22.16.0
+2025-10-24T05:56:23.584Z	Installing project dependencies: npm clean-install --progress=false
+2025-10-24T05:56:57.523Z	
+2025-10-24T05:56:57.523Z	added 249 packages, and audited 250 packages in 34s
+2025-10-24T05:56:57.523Z	
+2025-10-24T05:56:57.524Z	36 packages are looking for funding
+2025-10-24T05:56:57.524Z	  run `npm fund` for details
+2025-10-24T05:56:57.524Z	
+2025-10-24T05:56:57.524Z	found 0 vulnerabilities
+2025-10-24T05:56:57.596Z	Executing user build command: npm run build
+2025-10-24T05:56:57.783Z	
+2025-10-24T05:56:57.783Z	> abusebin@0.1.0 build
+2025-10-24T05:56:57.783Z	> npx --yes @opennextjs/cloudflare@latest build
+2025-10-24T05:56:57.783Z	
+2025-10-24T05:57:28.216Z	npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+2025-10-24T05:57:47.919Z	
+2025-10-24T05:57:47.919Z	┌─────────────────────────────┐
+2025-10-24T05:57:47.919Z	│ OpenNext — Cloudflare build │
+2025-10-24T05:57:47.919Z	└─────────────────────────────┘
+2025-10-24T05:57:47.919Z	
+2025-10-24T05:57:48.175Z	opennextjs-cloudflare build
+2025-10-24T05:57:48.176Z	
+2025-10-24T05:57:48.177Z	Build an OpenNext Cloudflare worker
+2025-10-24T05:57:48.177Z	
+2025-10-24T05:57:48.177Z	Options:
+2025-10-24T05:57:48.177Z	      --help                        Show help                          [boolean]
+2025-10-24T05:57:48.177Z	      --version                     Show version number                [boolean]
+2025-10-24T05:57:48.177Z	  -c, --config                      Path to Wrangler configuration file [string]
+2025-10-24T05:57:48.181Z	      --configPath                  Path to Wrangler configuration file
+2025-10-24T05:57:48.182Z	                                                           [deprecated] [string]
+2025-10-24T05:57:48.182Z	  -e, --env                         Wrangler environment to use for operations
+2025-10-24T05:57:48.182Z	                                                                        [string]
+2025-10-24T05:57:48.182Z	  -s, --skipNextBuild, --skipBuild  Skip building the Next.js app
+2025-10-24T05:57:48.182Z	                                                      [boolean] [default: false]
+2025-10-24T05:57:48.182Z	      --noMinify                    Disable worker minification
+2025-10-24T05:57:48.182Z	                                                      [boolean] [default: false]
+2025-10-24T05:57:48.182Z	      --skipWranglerConfigCheck     Skip checking for a Wrangler config
+2025-10-24T05:57:48.182Z	                                                      [boolean] [default: false]
+2025-10-24T05:57:48.182Z	      --openNextConfigPath          Path to the OpenNext configuration file
+2025-10-24T05:57:48.182Z	                                                                        [string]
+2025-10-24T05:57:48.183Z	
+2025-10-24T05:57:48.183Z	Error: The `open-next.config.ts` should have a default export like this:
+2025-10-24T05:57:48.183Z	
+2025-10-24T05:57:48.183Z	{
+2025-10-24T05:57:48.183Z	  default: {
+2025-10-24T05:57:48.183Z	    override: {
+2025-10-24T05:57:48.186Z	      wrapper: "cloudflare-node",
+2025-10-24T05:57:48.188Z	      converter: "edge",
+2025-10-24T05:57:48.188Z	      proxyExternalRequest: "fetch",
+2025-10-24T05:57:48.188Z	      incrementalCache: "dummy" | function,
+2025-10-24T05:57:48.188Z	      tagCache: "dummy" | function,
+2025-10-24T05:57:48.188Z	      queue: "dummy" | "direct" | function,
+2025-10-24T05:57:48.188Z	    },
+2025-10-24T05:57:48.188Z	  },
+2025-10-24T05:57:48.188Z	  edgeExternals: ["node:crypto"],
+2025-10-24T05:57:48.188Z	  middleware: {
+2025-10-24T05:57:48.188Z	    external: true,
+2025-10-24T05:57:48.188Z	    override: {
+2025-10-24T05:57:48.188Z	      wrapper: "cloudflare-edge",
+2025-10-24T05:57:48.193Z	      converter: "edge",
+2025-10-24T05:57:48.193Z	      proxyExternalRequest: "fetch",
+2025-10-24T05:57:48.193Z	      incrementalCache: "dummy" | function,
+2025-10-24T05:57:48.193Z	      tagCache: "dummy" | function,
+2025-10-24T05:57:48.193Z	      queue: "dummy" | "direct" | function,
+2025-10-24T05:57:48.193Z	    },
+2025-10-24T05:57:48.193Z	  },
+2025-10-24T05:57:48.194Z	}
+2025-10-24T05:57:48.194Z	
+2025-10-24T05:57:48.194Z	
+2025-10-24T05:57:48.194Z	    at ensureCloudflareConfig (file:///opt/buildhome/.npm/_npx/b8f71965aba33be8/node_modules/@opennextjs/cloudflare/dist/cli/build/utils/ensure-cf-config.js:62:15)
+2025-10-24T05:57:48.194Z	    at compileConfig (file:///opt/buildhome/.npm/_npx/b8f71965aba33be8/node_modules/@opennextjs/cloudflare/dist/cli/commands/utils.js:39:5)
+2025-10-24T05:57:48.194Z	    at async buildCommand (file:///opt/buildhome/.npm/_npx/b8f71965aba33be8/node_modules/@opennextjs/cloudflare/dist/cli/commands/build.js:11:34)
+2025-10-24T05:57:48.262Z	Failed: error occurred while running build command
