@@ -4,11 +4,14 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { useAuth } from "@/lib/auth"
 import { usePastes } from "@/lib/paste-context"
-import { NavBar } from "@/components/nav-bar"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import dynamic from "next/dynamic"
 import { toast } from "sonner"
-import { AlertTriangle } from "lucide-react"
+
+// dynamically import UI components to reduce bundle size
+const NavBar = dynamic(() => import("@/components/nav-bar"), { ssr: false })
+const Button = dynamic(() => import("@/components/ui/button"), { ssr: false })
+const Input = dynamic(() => import("@/components/ui/input"), { ssr: false })
+const AlertTriangle = dynamic(() => import("lucide-react").then((mod) => mod.AlertTriangle), { ssr: false })
 
 export default function DeleteAccountPage() {
   const router = useRouter()
@@ -19,14 +22,17 @@ export default function DeleteAccountPage() {
   const [isDeleting, setIsDeleting] = useState(false)
   const [error, setError] = useState("")
 
-  if (!user) {
-    router.push("/login")
-    return null
-  }
+  // Redirects
+  if (typeof window !== "undefined") {
+    if (!user) {
+      router.push("/login")
+      return null
+    }
 
-  if (user.role === "Admin") {
-    router.push("/profile/customize")
-    return null
+    if (user.role === "Admin") {
+      router.push("/profile/customize")
+      return null
+    }
   }
 
   const handleDeleteAccount = async () => {
