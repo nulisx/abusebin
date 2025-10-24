@@ -1,5 +1,6 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
+import { realTimeSync } from "./real-time-sync"
 
 function generateUUID(): string {
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
@@ -374,20 +375,27 @@ export const useAuth = create<AuthStore>()(
           }
 
           // Update user online status
+          const updatedUser = { ...user, isOnline: true, lastSeen: new Date() }
+          
           set((state) => ({
             users: state.users.map((u) => {
               if (u.id === user.id) {
-                return {
-                  ...u,
-                  isOnline: true,
-                  lastSeen: new Date(),
-                }
+                return updatedUser
               }
               return u
             }),
-            user: { ...user, isOnline: true, lastSeen: new Date() },
+            user: updatedUser,
             isAuthenticated: true,
           }))
+
+          // Broadcast online status to other tabs
+          if (realTimeSync) {
+            realTimeSync.broadcast("user_status_change", {
+              userId: user.id,
+              isOnline: true,
+              lastSeen: new Date(),
+            }, "high")
+          }
 
           return { success: true }
         }
@@ -404,6 +412,15 @@ export const useAuth = create<AuthStore>()(
             user: null,
             isAuthenticated: false,
           }))
+
+          // Broadcast offline status to other tabs
+          if (realTimeSync) {
+            realTimeSync.broadcast("user_status_change", {
+              userId: user.id,
+              isOnline: false,
+              lastSeen: new Date(),
+            }, "high")
+          }
         } else {
           set({ user: null, isAuthenticated: false })
         }
@@ -465,7 +482,7 @@ export const useAuth = create<AuthStore>()(
           email: email || "",
           password,
           role: "User",
-          avatar: "./public/images/design-mode/ezqzq0.png",
+          avatar: "/images/design-mode/a9q5s0.png",
           bio: "",
           createdAt: new Date(),
           joinedAt: new Date(),
@@ -810,7 +827,7 @@ export const useAuth = create<AuthStore>()(
           }
         }
 
-        if (!updatedUser.avatar && user.avatar && user.avatar !== "./public/images/design-mode/ezqzq0.png") {
+        if (!updatedUser.avatar && user.avatar && user.avatar !== "/images/design-mode/a9q5s0.png") {
           // Keep existing avatar if no new one provided and current isn't default
           updatedStateUser.avatar = user.avatar
         }
@@ -921,7 +938,7 @@ export const useAuth = create<AuthStore>()(
             updatedStateUser.lastAvatarUpdate = Date.now()
             console.log("[v0] Avatar updated")
           } else if (updatedUser.avatar === "" || updatedUser.avatar === null) {
-            updatedStateUser.avatar = "./public/images/design-mode/ezqzq0.png"
+            updatedStateUser.avatar = "/images/design-mode/a9q5s0.png"
             updatedStateUser.lastAvatarUpdate = Date.now()
             console.log("[v0] Avatar reset to default")
           }
@@ -967,6 +984,14 @@ export const useAuth = create<AuthStore>()(
             users: newUsers,
           }
         })
+
+        // Broadcast profile updates to other tabs
+        if (realTimeSync) {
+          realTimeSync.broadcast("user_profile_update", {
+            userId: user.id,
+            updates: updatedUser,
+          }, "medium")
+        }
 
         await new Promise((resolve) => setTimeout(resolve, 100))
 
@@ -1162,12 +1187,12 @@ export const useAuth = create<AuthStore>()(
         set((state) => ({
           users: state.users.map((u) => {
             if (u.id === userId) {
-              return { ...u, avatar: "./public/images/design-mode/ezqzq0.png" }
+              return { ...u, avatar: "/images/design-mode/a9q5s0.png" }
             }
             return u
           }),
           user:
-            state.user?.id === userId ? { ...state.user, avatar: "./public/images/design-mode/ezqzq0.png" } : state.user,
+            state.user?.id === userId ? { ...state.user, avatar: "/images/design-mode/a9q5s0.png" } : state.user,
         }))
 
         return { success: true, message: "Profile picture removed successfully." }
@@ -1334,3 +1359,127 @@ export const useAuth = create<AuthStore>()(
     { name: "auth-store" },
   ),
 )
+
+// Real-time sync initialization - Listen for user status changes from other tabs
+if (typeof window !== "undefined" && realTimeSync) {
+  // Listen for user status changes
+  realTimeSync.on("user_status_change", (data: { userId: string; isOnline: boolean; lastSeen: Date }) => {
+    const state = useAuth.getState()
+    
+    // Update user status in store
+    useAuth.setState({
+      users: state.users.map((u) => {
+        if (u.id === data.userId) {
+          return {
+            ...u,
+            isOnline: data.isOnline,
+            lastSeen: new Date(data.lastSeen),
+          }
+        }
+        return u
+      }),
+    })
+  })
+
+  // Listen for user profile updates (avatar, bio, etc.)
+  realTimeSync.on("user_profile_update", (data: { userId: string; updates: Partial<User> }) => {
+    const state = useAuth.getState()
+    
+    useAuth.setState({
+      users: state.users.map((u) => {
+        if (u.id === data.userId) {
+          return {
+            ...u,
+            ...data.updates,
+          }
+        }
+        return u
+      }),
+      // Update current user if it's them
+      user: state.user?.id === data.userId ? { ...state.user, ...data.updates } : state.user,
+    })
+  })
+
+  // Heartbeat system - Update online status every 30 seconds
+  let heartbeatInterval: NodeJS.Timeout | null = null
+  
+  const startHeartbeat = () => {
+    if (heartbeatInterval) return
+    
+    heartbeatInterval = setInterval(() => {
+      const state = useAuth.getState()
+      
+      if (state.user && state.isAuthenticated) {
+        const now = new Date()
+        
+        // Update lastSeen locally
+        useAuth.setState({
+          users: state.users.map((u) => {
+            if (u.id === state.user?.id) {
+              return { ...u, lastSeen: now, isOnline: true }
+            }
+            return u
+          }),
+          user: { ...state.user, lastSeen: now, isOnline: true },
+        })
+        
+        // Broadcast heartbeat to other tabs
+        if (realTimeSync) {
+          realTimeSync.broadcast("user_status_change", {
+            userId: state.user.id,
+            isOnline: true,
+            lastSeen: now,
+          }, "low")
+        }
+      }
+    }, 30000) // 30 seconds
+  }
+  
+  const stopHeartbeat = () => {
+    if (heartbeatInterval) {
+      clearInterval(heartbeatInterval)
+      heartbeatInterval = null
+    }
+  }
+  
+  // Start heartbeat when user is logged in
+  const state = useAuth.getState()
+  if (state.user && state.isAuthenticated) {
+    startHeartbeat()
+  }
+  
+  // Subscribe to auth changes to start/stop heartbeat
+  useAuth.subscribe((state) => {
+    if (state.user && state.isAuthenticated) {
+      startHeartbeat()
+    } else {
+      stopHeartbeat()
+    }
+  })
+  
+  // Mark users as offline after 2 minutes of inactivity
+  setInterval(() => {
+    const state = useAuth.getState()
+    const now = Date.now()
+    const twoMinutes = 2 * 60 * 1000
+    
+    useAuth.setState({
+      users: state.users.map((u) => {
+        const lastSeenTime = u.lastSeen ? new Date(u.lastSeen).getTime() : 0
+        const isInactive = now - lastSeenTime > twoMinutes
+        
+        // Don't mark current user as offline
+        if (u.id === state.user?.id) {
+          return u
+        }
+        
+        // Mark as offline if inactive
+        if (u.isOnline && isInactive) {
+          return { ...u, isOnline: false }
+        }
+        
+        return u
+      }),
+    })
+  }, 60000) // Check every minute
+}
