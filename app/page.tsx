@@ -89,7 +89,6 @@ export default function HomePage() {
             height={150}
             className="object-contain mb-4"
             alt="Abusebin Logo"
-            style={{ width: 'auto', height: 150 }}
           />
 
           <Link href="/medias" className="text-blue-500 hover:text-blue-400 text-lg mb-2">

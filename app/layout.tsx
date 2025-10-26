@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: "",
   generator: "Abuse.bin",
   icons: {
-    icon: "./public/images/design-mode/a9q5s0.png", // 👈 tab icon (favicon)
+    icon: "https://files.catbox.moe/a9q5s0.png", // 👈 tab icon (favicon)
   },
 }
 
