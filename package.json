@@ -1,12 +1,12 @@
 {
-  "name": "abusebin",
+  "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 5000 -H 0.0.0.0",
     "build": "next build",
-    "start": "next start -p 5000 -H 0.0.0.0",
-    "lint": "next lint"
+    "dev": "next dev",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
     "@emotion/is-prop-valid": "latest",
@@ -38,15 +38,16 @@
     "@radix-ui/react-toggle": "latest",
     "@radix-ui/react-toggle-group": "latest",
     "@radix-ui/react-tooltip": "latest",
-    "@vercel/analytics": "^1.3.1",
-    "autoprefixer": "^10.4.21",
+    "@vercel/analytics": "1.3.1",
+    "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "latest",
-    "date-fns": "^4.1.0",
+    "date-fns": "4.1.0",
+    "deno": "latest",
     "embla-carousel-react": "latest",
     "framer-motion": "latest",
-    "geist": "^1.5.1",
+    "geist": "^1.3.1",
     "immer": "latest",
     "input-otp": "latest",
     "lucide-react": "^0.454.0",
@@ -59,7 +60,7 @@
     "react-resizable-panels": "latest",
     "recharts": "latest",
     "sonner": "latest",
-    "tailwind-merge": "^2.6.0",
+    "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "use-sync-external-store": "latest",
     "vaul": "latest",
@@ -67,17 +68,13 @@
     "zustand": "latest"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.16",
-    "@types/node": "^22.18.12",
-    "@types/react": "^18.3.26",
-    "@types/react-dom": "^18.3.7",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^4.1.16",
+    "@tailwindcss/postcss": "^4.1.9",
+    "@types/node": "^22",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8.5",
+    "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
-    "typescript": "^5.9.3",
-    "wrangler": "^4.45.0"
-  },
-  "engines": {
-    "node": ">=20"
+    "typescript": "^5"
   }
 }
