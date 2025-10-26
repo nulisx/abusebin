@@ -10,7 +10,6 @@ export type UserRole =
   | "Kitty"
   | "Criminal"
   | "User"
-  | "Effect Perms"
 
 export const ADMIN_ROLES: UserRole[] = ["Admin"]
 
