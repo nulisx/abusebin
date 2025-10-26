@@ -139,16 +139,17 @@ export function UserAvatar({
         setIsLoading(false)
       }
     }
-  }, [users, userId, src, currentUser, fallbackSrc, isGifUrl])
+  }, [users, userId, src, currentUser, fallbackSrc, avatarSrc, isGifUrl])
 
   const handleImageError = useCallback(
     (e: React.SyntheticEvent<HTMLImageElement>) => {
       const target = e.target as HTMLImageElement
+      console.error("[v0] Avatar image failed to load:", target.src.substring(0, 50) + "...")
 
       if (target.src !== fallbackSrc && !imageError) {
         setImageError(true)
         setAvatarSrc(fallbackSrc)
-        setImageKey((prev) => prev + 1)
+        setImageKey((prev) => prev + 1) // Force re-render on error
         setIsLoading(false)
       }
     },
@@ -158,6 +159,7 @@ export function UserAvatar({
   const handleImageLoad = useCallback(() => {
     setIsLoading(false)
     setImageError(false)
+    console.log("[v0] Avatar image loaded successfully")
   }, [])
 
   const shouldUnoptimize = unoptimized || isGifUrl(avatarSrc || "")
@@ -194,7 +196,7 @@ export function UserAvatar({
           transition: "opacity 0.2s ease-in-out",
         }}
         priority={size > 64} // Prioritize larger avatars
-        {...(size <= 64 && { loading: shouldUnoptimize ? "eager" : "lazy" })} // Only set loading when not priority
+        loading={shouldUnoptimize ? "eager" : "lazy"}
       />
       {effectUrl && (
         <div

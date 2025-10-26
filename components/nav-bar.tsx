@@ -13,13 +13,13 @@ export function NavBar() {
   const getSparkleEffect = (role: string) => {
     switch (role) {
       case "Admin":
-        return "./public/images/design-mode/vqvalf.gif"
+        return "https://files.catbox.moe/vqvalf.gif"
       case "Manager":
-        return "./public/images/design-mode/p9n473.gif"
+        return "https://files.catbox.moe/p9n473.gif"
       case "Rich":
-        return "./public/images/design-mode/2qqmwy.gif"
+        return "https://files.catbox.moe/2qqmwy.gif"
       case "Kitty":
-        return "./public/images/design-mode/kzzl7i.gif"
+        return "https://files.catbox.moe/kzzl7i.gif"
       default:
         return null
     }
@@ -34,7 +34,7 @@ export function NavBar() {
   return (
     <nav className="flex items-center justify-between p-4 border-b border-black">
       <Link href="/" className="flex items-center space-x-2 hover:opacity-80">
-        <Image src="/images/abusebin-logo.png" alt="abuse.bin logo" width={32} height={32} className="object-contain" style={{ width: 'auto', height: 32 }} />
+        <Image src="/images/abusebin-logo.png" alt="abuse.bin logo" width={32} height={32} className="object-contain" />
         <div className="text-white text-xl font-bold">abuse.bin</div>
       </Link>
       <div className="flex items-center space-x-6">
@@ -66,16 +66,16 @@ export function NavBar() {
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden flex-shrink-0">
                   <UserAvatar
-                    src={user.avatar || "/images/design-mode/a9q5s0.png"}
+                    src={user.avatar || "https://files.catbox.moe/ezqzq0.png"}
                     alt="Avatar"
                     size={32}
                     userId={user.id}
-                    fallbackSrc="/images/design-mode/a9q5s0.png"
+                    fallbacksrc="/images/design-mode/ezqzq0.png"
                   />
                 </div>
                 <div className="relative">
                   <span
-                    className={user.role === "Council" ? "rainbow-text font-medium" : "font-medium"}
+                    className="font-medium"
                     style={{
                       color:
                         user.role === "User" && user.nameColor
@@ -102,6 +102,7 @@ export function NavBar() {
                                 })()
                               : "#d1d5db",
                     }}
+                    className={user.role === "Council" ? "rainbow-text" : ""}
                   >
                     {user.username}
                   </span>
@@ -120,7 +121,7 @@ export function NavBar() {
                 </div>
                 <div className="relative flex items-center">
                   <span
-                    className={user.role === "Council" ? "rainbow-text text-base" : "text-base"}
+                    className="text-base"
                     style={{
                       color:
                         user.role === "Council"
@@ -145,6 +146,7 @@ export function NavBar() {
                               })()
                             : "#d1d5db",
                     }}
+                    className={user.role === "Council" ? "rainbow-text" : ""}
                   >
                     [{user.role}]
                   </span>

@@ -11,7 +11,7 @@ export function Navigation() {
   return (
     <nav className="flex items-center justify-between p-4 border-b border-gray-800">
       <Link href="/" className="flex items-center space-x-2 hover:opacity-80">
-        <Image src="/images/abusebin-logo.png" alt="Abusebin" width={32} height={32} className="object-contain" style={{ width: 'auto', height: 32 }} />
+        <Image src="/images/abusebin-logo.png" alt="Abusebin" width={32} height={32} className="object-contain" />
         <div className="text-white text-xl font-bold">abuse.bin</div>
       </Link>
       <div className="flex items-center space-x-6">
@@ -43,12 +43,11 @@ export function Navigation() {
               <div className="flex items-center space-x-2">
                 <div className="w-8 h-8 rounded-full bg-gray-700 flex items-center justify-center overflow-hidden">
                   <Image
-                    src={user.avatar || "/images/design-mode/a9q5s0.png"}
+                    src={user.avatar || "https://files.catbox.moe/ezqzq0.png"}
                     alt="Avatar"
                     width={32}
                     height={32}
                     className="object-cover"
-                    unoptimized
                   />
                 </div>
                 <span className={ROLE_COLORS[user.role as keyof typeof ROLE_COLORS] || "text-white"}>
