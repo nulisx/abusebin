@@ -1,37 +1,30 @@
-import type { NextRequest } from "next/server"
-import { Deno } from "deno"
+import { NextRequest } from "next/server"
 
 const clients = new Set<WebSocket>()
 
-export async function GET(req: NextRequest) {
-  const upgradeHeader = req.headers.get("upgrade")
+export const config = {
+  runtime: "edge",
+}
 
+export default function handler(req: NextRequest) {
+  const upgradeHeader = req.headers.get("upgrade")
   if (upgradeHeader !== "websocket") {
     return new Response("Expected WebSocket", { status: 426 })
   }
 
-  const { socket, response } = Deno.upgradeWebSocket(req)
+  const { 0: client, 1: server } = Object.values(new WebSocketPair()) as [WebSocket, WebSocket]
+  clients.add(server)
 
-  socket.onopen = () => {
-    clients.add(socket)
-  }
+  server.accept()
 
-  socket.onmessage = (event) => {
-    const message = event.data
-    clients.forEach((client) => {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(message)
-      }
+  server.addEventListener("message", (event) => {
+    clients.forEach((ws) => {
+      if (ws.readyState === ws.OPEN) ws.send(event.data)
     })
-  }
+  })
 
-  socket.onclose = () => {
-    clients.delete(socket)
-  }
+  server.addEventListener("close", () => clients.delete(server))
+  server.addEventListener("error", () => clients.delete(server))
 
-  socket.onerror = () => {
-    clients.delete(socket)
-  }
-
-  return response
+  return new Response(null, { status: 101, webSocket: client })
 }
