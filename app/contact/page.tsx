@@ -10,21 +10,15 @@ export default function ContactPage() {
   // Mock admin data for display - replaced ic3 with bribe
   const admins = [
     {
-      username: "ic3/revoke",
-      role: "Admin",
-      avatar: "ezqzq0.jpg", // Updated to use new revokes avatar
-      telegramLink: "https://t.me/ragebaitr",
-    },
-{
       username: "wounds",
       role: "Admin",
-      avatar: "ezqzq0.jpg", // Updated to use new wounds avatar
+      avatar: "https://files.catbox.moe/5bfnaj.jpg", // Updated to use new wounds avatar
       telegramLink: "https://t.me/junkjaw",
     },
     {
       username: "dismayings",
       role: "Admin",
-      avatar: "ezqzq0.png", // Default avatar for dismayings
+      avatar: "https://files.catbox.moe/ezqzq0.png", // Default avatar for dismayings
       telegramLink: "https://t.me/unedrable", // Updated telegram link
     },
   ]
@@ -61,7 +55,6 @@ export default function ContactPage() {
                     width={96}
                     height={96}
                     className="object-cover"
-                    unoptimized
                   />
                 </div>
                 <div className="text-center mb-4">
