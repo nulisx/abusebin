@@ -130,11 +130,11 @@ export default function RolesPage() {
                         !user ||
                         !isSuperAdmin() ||
                         u.id === user.id ||
-                        u.username === "wounds" ||
                         u.username === "ic3" ||
+                        u.username === "wounds" ||
+                        u.username === "dismayings" ||
                         u.username === "slit" ||
-                        u.username === "bribe" ||
-                        u.username === "dismayings"
+                        u.username === "bribe"
                       }
                     >
                       Delete
