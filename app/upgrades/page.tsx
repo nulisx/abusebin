@@ -91,13 +91,13 @@ export default function PricingPage() {
       // Default role effects (when no preview is active)
       switch (role) {
         case "Admin":
-          return "./public/images/design-mode/vqvalf.gif"
+          return "https://files.catbox.moe/vqvalf.gif"
         case "Manager":
-          return "./public/images/design-mode/p9n473.gif"
+          return "https://files.catbox.moe/p9n473.gif"
         case "Rich":
-          return "./public/images/design-mode/2qqmwy.gif"
+          return "https://files.catbox.moe/2qqmwy.gif"
         case "Kitty":
-          return "./public/images/design-mode/kzzl7i.gif"
+          return "https://files.catbox.moe/kzzl7i.gif"
         case "Criminal":
           return ""
         case "User":
