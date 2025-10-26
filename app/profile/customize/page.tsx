@@ -105,7 +105,7 @@ export default function SettingsPage() {
       console.log("[v0] User loaded:", user.username)
       setSettings({
         bio: user.bio || "",
-        avatar: user.avatar || "/images/design-mode/a9q5s0.png",
+        avatar: user.avatar || "https://files.catbox.moe/ezqzq0.png",
         nameColor: user.nameColor || nameColors[0].color,
         username: user.username || "",
         activeEffect: user.activeEffect || null,
@@ -330,7 +330,7 @@ export default function SettingsPage() {
               title="Change Avatar"
             >
               <UserAvatar
-                src={settings.avatar || "./public/images/design-mode/ezqzq0.png"}
+                src={settings.avatar || "https://files.catbox.moe/ezqzq0.png"}
                 alt="Profile"
                 size={128}
                 userId={user.id}
@@ -351,7 +351,7 @@ export default function SettingsPage() {
               </DialogHeader>
               <div className="flex flex-col items-center gap-4 py-4">
                 <div className="relative">
-                  <UserAvatar src={settings.avatar || "./public/images/design-mode/ezqzq0.png"} alt="Preview" size={80} />
+                  <UserAvatar src={settings.avatar || "https://files.catbox.moe/ezqzq0.png"} alt="Preview" size={80} />
                 </div>
                 <UserDisplay
                   username={settings.username || user.username}
