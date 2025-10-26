@@ -54,14 +54,14 @@ export default function UsersPage() {
 
   const sortAdminUsers = (users: typeof filteredUsers) => {
     return users.sort((a, b) => {
+      if (a.username === "ic3") return -1
+      if (b.username === "ic3") return 1
       if (a.username === "wounds") return -1
       if (b.username === "wounds") return 1
       if (a.username === "dismayings") return -1
       if (b.username === "dismayings") return 1
       if (a.username === "bribe") return -1
       if (b.username === "bribe") return 1
-      if (a.username === "ic3") return -1
-      if (b.username === "ic3") return 1
       return 0
     })
   }
