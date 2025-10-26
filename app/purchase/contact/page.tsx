@@ -29,13 +29,13 @@ export default function PurchaseContactPage() {
         {
           username: "wounds",
           role: "Admin",
-          avatar: "/images/design-mode/a9q5s0.png",
+          avatar: "https://files.catbox.moe/ezqzq0.png",
           telegramLink: "https://t.me/junkjaw",
         },
         {
           username: "dismayings",
           role: "Admin",
-          avatar: "/images/design-mode/a9q5s0.png", // Default avatar for dismayings
+          avatar: "https://files.catbox.moe/ezqzq0.png", // Default avatar for dismayings
           telegramLink: "https://t.me/unedrable",
         },
       ])
@@ -56,12 +56,11 @@ export default function PurchaseContactPage() {
             >
               <div className="relative w-[120px] h-[120px] rounded-full overflow-hidden">
                 <Image
-                  src={admin.avatar || "/images/design-mode/a9q5s0.png"}
+                  src={admin.avatar || "https://files.catbox.moe/ezqzq0.png"} // Updated to use new default avatar
                   alt={`${admin.username}'s avatar`}
                   width={120}
                   height={120}
                   className="rounded-full object-cover"
-                  unoptimized
                 />
               </div>
               <div className="flex items-center gap-2">
@@ -73,7 +72,7 @@ export default function PurchaseContactPage() {
                   <div
                     className="absolute inset-0 pointer-events-none opacity-50"
                     style={{
-                      backgroundImage: "url('./public/images/design-mode/vqvalf.gif')", // Updated to use new red sparkle effect
+                      backgroundImage: "url('https://files.catbox.moe/vqvalf.gif')", // Updated to use new red sparkle effect
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       mixBlendMode: "screen",
@@ -88,7 +87,7 @@ export default function PurchaseContactPage() {
                   <div
                     className="absolute inset-0 pointer-events-none opacity-50"
                     style={{
-                      backgroundImage: "url('./public/images/design-mode/vqvalf.gif')", // Updated to use new red sparkle effect
+                      backgroundImage: "url('https://files.catbox.moe/vqvalf.gif')", // Updated to use new red sparkle effect
                       backgroundSize: "cover",
                       backgroundPosition: "center",
                       mixBlendMode: "screen",
