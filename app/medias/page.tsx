@@ -57,12 +57,11 @@ export default function ContactPage() {
               return (
                 <div key={admin.username} className="bg-zinc-900/50 rounded-lg p-6 flex flex-col items-center gap-4">
                   <Image
-                    src={userData?.avatar || "/images/design-mode/a9q5s0.png"}
+                    src={userData?.avatar || "https://files.catbox.moe/ezqzq0.png"}
                     alt={`${admin.username}'s avatar`}
                     width={80}
                     height={80}
                     className="rounded-full object-cover"
-                    unoptimized
                   />
                   <div className="flex items-center gap-2">
                     <UserDisplay username={admin.username} role={admin.role} nameColor={userData?.nameColor} />
